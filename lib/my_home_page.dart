@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 String avatarSrc= "https://static.thenounproject.com/png/2416926-200.png";
+String btntext1= "Button One";
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -24,7 +26,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
       ),
 
-      body: SingleChildScrollView(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/images/image 3.jpg"),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+                Colors.black12.withOpacity(0.2), BlendMode.dstATop
+            )
+          )
+        ),
         child: Column(
           children: [
             Row(
@@ -140,6 +151,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
+            ElevatedButton(
+                onPressed: (){
+                  setState(() {
+                    btntext1="Button Pressed";
+                  });
+                }, 
+                child: Text(btntext1)
+            )
             ],
 
         ),
