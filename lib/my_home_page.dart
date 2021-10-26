@@ -156,13 +156,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-            ElevatedButton(
-                onPressed: (){
-                  setState(() {
-                    btntext1="Button Pressed";
-                  });
-                }, 
-                child: Text(btntext1)
+            InkWell(
+              onDoubleTap: (){
+                setState(() {
+                  btntext1="Button One";
+                });
+              },
+              child: ElevatedButton(
+                  onPressed: (){
+                    setState(() {
+                      btntext1="Button Pressed";
+                    });
+                  },
+                  child: Text(btntext1)
+              ),
             )
             ],
 

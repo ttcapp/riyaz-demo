@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:riyaz_demo/second_page.dart';
+import 'package:riyaz_demo/third_page.dart';
 import 'package:slide_drawer/slide_drawer.dart';
 import 'package:riyaz_demo/my_home_page.dart';
 
@@ -21,7 +22,7 @@ final navigatorKey = GlobalKey<NavigatorState>();
       home: SlideDrawer(
         brightness: Brightness.dark,
         backgroundColor: Colors.cyan,
-        offsetFromRight: 250.0,
+        offsetFromRight: 150.0,
         items: [
           MenuItem('Home',
               onTap: (){},
@@ -35,7 +36,10 @@ final navigatorKey = GlobalKey<NavigatorState>();
               Icons.add_to_photos_sharp),
 
           MenuItem('Third Page',
-              onTap: (){},icon:
+              onTap: (){
+                navigatorKey.currentState!.push(MaterialPageRoute(builder: (context)=>ThirdPage())
+                );
+              },icon:
               Icons.add_box_outlined),
 
           MenuItem('Profile',
