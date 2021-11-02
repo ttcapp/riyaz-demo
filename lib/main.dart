@@ -50,7 +50,7 @@ final navigatorKey = GlobalKey<NavigatorState>();
               onTap: (){},icon:
               Icons.settings),
         ],
-        child: MyHomePage(),
+        child: ThirdPage(),
       ),
     );
   }
